@@ -1,0 +1,169 @@
+@font-face {
+    font-family: 'Pangolin';
+    src: url('Pangolin-Regular.ttf');
+  }   
+  body {
+    background: linear-gradient(rgb(0, 0, 40), rgb(160, 205, 247));
+    box-sizing: content-box;
+    color: white;
+    font-family: Pangolin;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    text-align: center;
+    user-select: none;
+    width: 100vw;
+    overflow-x: hidden;
+  }
+  section {
+    overflow: hidden;
+    width: 100vw;
+  }
+  section:first-of-type {
+    height: 100vh;
+  }
+  section:nth-of-type(2) {
+    height: 150vh;
+  }
+  section:last-of-type {
+    bottom: 0;
+    display: flex;
+    height: 150vh;
+    justify-content: center;
+  }    
+  #astronauta {
+    animation: astronauta 1.5s infinite;
+    background-image: url('../images/astronauta.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+    height: 272px;
+    left: 44%;
+    position: fixed;
+    top: -70vh;
+    transition: 1s;
+    width: 164px;
+    z-index: 1;
+  }
+  #ship {
+    position: fixed;
+    top: -80%;
+    left: 0%;
+    z-index: 2;
+    transition: 1.2s;
+  }
+  .subtitle:hover #ship{
+    left: 5vw;
+    top: 15vh;
+  }
+  .aguila {
+    animation: aguila 8s infinite linear;
+    height: calc(10em + 10vw);
+    left: 0;
+    position: absolute;
+    transform: scaleX(-1);
+  }
+  .arrow {
+    animation: arrow 1.4s infinite;
+    height: 60px;
+    position: absolute;
+    right: 40px;
+    top: 40px;
+    transform: rotate(-40deg);
+  }
+  .congrats {
+    animation: congrats 1s infinite;
+    color: yellow;
+    font-size: 5em;
+    bottom: 60vh;
+    opacity: 0;
+    position: absolute;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    transition: 4s;
+    z-index: 1;
+  }
+  .init {
+    animation: nave 2s;
+  }
+  .landscape {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+  }    
+  .nube {
+    height: calc(10em + 10vw);
+    position: relative;
+  }
+  .nube:nth-of-type(1) {
+    animation: nube 170s infinite;
+    right: 10%;
+  }
+  .nube:nth-of-type(2) {
+    animation: nube 150s infinite;
+    right: -10%;
+  }
+  .nube:nth-of-type(3) {
+    animation: nube 110s infinite;
+    right: -30%;
+  }
+  .nube:nth-of-type(4) {
+    animation: nube 130s infinite;
+    right: -50%;
+  }
+  .satelite {
+    animation: satelite 8s infinite;
+    height: calc(15em + 15vw);
+    transform: rotate3d(1, 1, 1, 0deg);
+    transform-style: preserve-3d;
+  }    
+  .title {
+    animation: bienvenido 2s infinite;
+    font-size: 5em;
+    margin: 100px 0;
+  }
+  .subtitle {
+    animation: ready 2s infinite;
+    cursor: pointer;
+    font-size: 2.5em;
+    transition: .2s;
+  }
+  .subtitle:hover {
+    font-size: 3em;
+  }
+  @keyframes aguila {
+    49% {
+      left: 60vw;
+      transform: scaleX(-1);
+    }
+    50% {
+      transform: scaleX(1);
+    }
+    99% {
+      transform: scaleX(1);
+    }
+  }
+  @keyframes arrow {
+    50% { transform: translateX(20px) translateY(-5px) rotate(-30deg); }
+  }
+  @keyframes astronauta {
+    50% { transform: rotate(10deg); }
+  }
+  @keyframes bienvenido {
+    50% { text-shadow: 0px 0px 80px white; }
+  }
+  @keyframes congrats {
+    50% { font-size: 5.3em; }
+  }
+  @keyframes nube {
+    100% { transform: translateX(-90vw); }
+  } 
+  @keyframes ready {
+    25% { color: aqua; }
+    50% { color: violet; }
+    75% { color: chartreuse; }
+  }
+  @keyframes satelite {
+    50% { transform: rotate3d(1, 1, 1, 24deg); }
+  }
